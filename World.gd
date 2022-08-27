@@ -8,4 +8,4 @@ func _ready():
 	player.connect_camera(camera)
 
 func _physics_process(delta):
-	print(camera)
+	pass

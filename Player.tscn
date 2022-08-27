@@ -16,6 +16,7 @@ shape = SubResource( 1 )
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 1 )
+flip_h = true
 region_enabled = true
 region_rect = Rect2( 34, 16, 13, 16 )
 
