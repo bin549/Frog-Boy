@@ -1,12 +1,28 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://Characters.png" type="Texture" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=1]
 [ext_resource path="res://Player.gd" type="Script" id=2]
 
 [sub_resource type="CapsuleShape2D" id=1]
 height = 8.0
 
+[sub_resource type="StreamTexture" id=3]
+load_path = "res://.import/Characters.png-88d61f11b026c46e349cac528f4324fe.stex"
+
+[sub_resource type="Gradient" id=4]
+
+[sub_resource type="GradientTexture" id=5]
+gradient = SubResource( 4 )
+
+[sub_resource type="ParticlesMaterial" id=2]
+flag_disable_z = true
+gravity = Vector3( 0, 0, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+color_ramp = SubResource( 5 )
+
 [node name="Player" type="KinematicBody2D"]
+z_index = 10
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -15,7 +31,7 @@ shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 1.5, 1.5 )
-texture = ExtResource( 1 )
+texture = SubResource( 3 )
 flip_h = true
 region_enabled = true
 region_rect = Rect2( 34, 16, 13, 16 )
@@ -26,3 +42,11 @@ cast_to = Vector2( 0, 15 )
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="."]
 position = Vector2( 0, -12 )
+
+[node name="Trail" type="Particles2D" parent="."]
+position = Vector2( 1, 0 )
+z_index = -1
+emitting = false
+amount = 10
+process_material = SubResource( 2 )
+texture = ExtResource( 1 )

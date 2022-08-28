@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Disasterpeace, David Peacock - Nature.mp3-7d1f221d9e1c950ead54b4f9f5d9f33d.mp3str"
+
+[deps]
+
+source_file="res://Disasterpeace, David Peacock - Nature.mp3"
+dest_files=[ "res://.import/Disasterpeace, David Peacock - Nature.mp3-7d1f221d9e1c950ead54b4f9f5d9f33d.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

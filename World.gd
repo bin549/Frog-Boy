@@ -6,6 +6,7 @@ onready var player: = $Player
 func _ready():
 	VisualServer.set_default_clear_color(Color.lightslategray)
 	player.connect_camera(camera)
+	$Music.play()
 
 func _physics_process(delta):
 	pass

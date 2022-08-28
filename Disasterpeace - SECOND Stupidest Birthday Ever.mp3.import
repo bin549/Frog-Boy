@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Disasterpeace - SECOND Stupidest Birthday Ever.mp3-06fa6f4e44d8467e02335ea650c51ba6.mp3str"
+
+[deps]
+
+source_file="res://Disasterpeace - SECOND Stupidest Birthday Ever.mp3"
+dest_files=[ "res://.import/Disasterpeace - SECOND Stupidest Birthday Ever.mp3-06fa6f4e44d8467e02335ea650c51ba6.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
