@@ -3,7 +3,7 @@ extends KinematicBody2D
 export(Resource) var moveData = preload("res://DefaultPlayerMovementData.tres") as PlayerMovementData
 
 var velocity = Vector2.ZERO
-onready var sprite: = $Sprite
+onready var animatedSprite: = $AnimatedSprite
 onready var remoteTransform2D: = $RemoteTransform2D
 
 func _physics_process(delta):
@@ -14,10 +14,10 @@ func _physics_process(delta):
 
 func move_state(input):
 	if not input.x != 0:
-		apply_friction()
+		velocity.x = move_toward(velocity.x, 0, moveData.FRICION)
 	else:
 		apply_acceleration(input.x)
-		sprite.flip_h = input.x < 0
+		animatedSprite.flip_h = input.x < 0
 	if is_on_floor():
 		if Input.is_action_just_pressed("move_up"):
 			velocity.y = moveData.JUMP_FORCE
@@ -30,9 +30,6 @@ func apply_gravity():
 
 func apply_acceleration(amount):
 	velocity.x = move_toward(velocity.x, moveData.MAX_SPEED * amount, moveData.ACCELERATION)
-
-func apply_friction():
-	velocity.x = move_toward(velocity.x, 0, moveData.FRICION)
 
 func connect_camera(camera):
 	var camera_path = camera.get_path()
