@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://World.gd" type="Script" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://Disasterpeace - SECOND Stupidest Birthday Ever.mp3" type="AudioStream" id=4]
 [ext_resource path="res://ParallaxBg.tscn" type="PackedScene" id=5]
 [ext_resource path="res://platformertiles.png" type="Texture" id=6]
+[ext_resource path="res://122867.png" type="Texture" id=7]
+[ext_resource path="res://143179.png" type="Texture" id=8]
 
 [sub_resource type="ConvexPolygonShape2D" id=3]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -203,10 +205,41 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 } ]
 8/z_index = 0
 
+[sub_resource type="AtlasTexture" id=17]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 9, 25, 318, 455 )
+
+[sub_resource type="AtlasTexture" id=18]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 343, 25, 318, 455 )
+
+[sub_resource type="AtlasTexture" id=19]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 677, 25, 318, 455 )
+
+[sub_resource type="AtlasTexture" id=20]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 1011, 25, 318, 455 )
+
+[sub_resource type="SpriteFrames" id=16]
+animations = [ {
+"frames": [ SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
 [node name="World" type="Node2D"]
 script = ExtResource( 2 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
@@ -227,3 +260,18 @@ format = 1
 tile_data = PoolIntArray( -15, 0, 0, -14, 1, 0, -13, 1, 0, -12, 1, 0, -11, 1, 0, -10, 1, 0, -9, 1, 0, 65520, 1, 0, 65521, 1, 0, 65522, 1, 0, 65523, 1, 0, 65524, 1, 0, 65525, 1, 0, 65526, 1, 0, 65527, 1, 0, 131045, 3, 0, 131046, 4, 0, 131047, 4, 0, 131048, 4, 0, 131049, 4, 0, 131050, 4, 0, 131051, 4, 0, 131052, 4, 0, 131053, 4, 0, 131054, 4, 0, 131055, 4, 0, 131056, 4, 0, 131057, 4, 0, 131058, 4, 0, 131059, 4, 0, 131060, 4, 0, 131061, 4, 0, 131062, 5, 0, 196592, 7, 0, 196593, 7, 0, 196594, 7, 0, 196595, 7, 0, 196596, 7, 0, 196597, 7, 0, 196598, 8, 0, 262134, 8, 0, 327670, 8, 0 )
 
 [node name="ParallaxBg" parent="." instance=ExtResource( 5 )]
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -167, -94 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 7 )
+region_enabled = true
+region_rect = Rect2( 139, 1101, 126, 127 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 372, -72 )
+scale = Vector2( 0.3, 0.3 )
+frames = SubResource( 16 )
+frame = 3
+playing = true
+flip_h = true
