@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://World.gd" type="Script" id=2]
@@ -233,6 +233,14 @@ animations = [ {
 "speed": 5.0
 } ]
 
+[sub_resource type="SpriteFrames" id=21]
+animations = [ {
+"frames": [  ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
 [node name="World" type="Node2D"]
 script = ExtResource( 2 )
 
@@ -272,6 +280,9 @@ region_rect = Rect2( 139, 1101, 126, 127 )
 position = Vector2( 372, -72 )
 scale = Vector2( 0.3, 0.3 )
 frames = SubResource( 16 )
-frame = 3
+frame = 2
 playing = true
 flip_h = true
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="."]
+frames = SubResource( 21 )
