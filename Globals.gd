@@ -1,14 +1,61 @@
 extends Node
 
-onready var animation_player = AnimationPlayer
+var bgm_enabled setget set_bgm_enabled, is_bgm_enabled
+var sfx_enabled setget set_sfx_enabled, is_sfx_enabled
+
+onready var animation_player = $AnimationPlayer
+
+const BGM_IDX = 1
+const SFX_IDX = 2
+const CONFIG_PATH = "user://settings.cfg"
+
+func _ready():
+	load_config()
 
 func start_game():
 	go_to_world("res://scenes/World.tscn")
 
+func is_bgm_enabled():
+	return not AudioServer.is_bus_mute(BGM_IDX)
+
+func set_bgm_enabled(value):
+	AudioServer.set_bus_mute(BGM_IDX, not value)
+
+func is_sfx_enabled():
+	return not AudioServer.is_bus_mute(SFX_IDX)
+
+
+func set_sfx_enabled(value):
+	AudioServer.set_bus_mute(SFX_IDX, not value)
 
 func go_to_world(path):
 	_animate_transition_to(path)
 
+func reload_world():
+	_animate_transition_to(null)
+
 func _animate_transition_to(path):
-	# animation_player.play_backwards("fade-in")
-	get_tree().change_scene(path)
+	animation_player.play_backwards("fade-in")
+	yield(animation_player, "animation_finished")
+	if path:
+		get_tree().change_scene(path)
+	else:
+		get_tree().reload_current_scene()
+	animation_player.play("fade-in")
+
+
+func save_config():
+	var file = ConfigFile.new()
+	file.set_value("audio", "bgm_enabled", is_bgm_enabled())
+	file.set_value("audio", "sfx_enabled", is_sfx_enabled())
+	var err = file.save(CONFIG_PATH)
+	if err != OK:
+		push_error("Failed to save config: %d" % err)
+
+func load_config():
+	var file = ConfigFile.new()
+	file.set_value("audio", "bgm_enabled", is_bgm_enabled())
+	file.set_value("audio", "sfx_enabled", is_sfx_enabled())
+	var err = file.save(CONFIG_PATH)
+	if err != OK:
+		push_error("Failed to save config: %d" % err)

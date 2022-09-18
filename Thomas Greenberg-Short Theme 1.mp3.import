@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Thomas Greenberg-Short Theme 1.mp3-2012692d9321793f681e929d63eea4c8.mp3str"
+
+[deps]
+
+source_file="res://Thomas Greenberg-Short Theme 1.mp3"
+dest_files=[ "res://.import/Thomas Greenberg-Short Theme 1.mp3-2012692d9321793f681e929d63eea4c8.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

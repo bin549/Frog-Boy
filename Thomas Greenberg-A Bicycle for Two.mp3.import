@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Thomas Greenberg-A Bicycle for Two.mp3-caaa7076867970d40f10276dea23e04d.mp3str"
+
+[deps]
+
+source_file="res://Thomas Greenberg-A Bicycle for Two.mp3"
+dest_files=[ "res://.import/Thomas Greenberg-A Bicycle for Two.mp3-caaa7076867970d40f10276dea23e04d.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
