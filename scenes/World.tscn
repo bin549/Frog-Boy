@@ -229,3 +229,4 @@ tile_data = PoolIntArray( -15, 0, 0, -14, 1, 0, -13, 1, 0, -12, 1, 0, -11, 1, 0,
 [node name="ParallaxBg" parent="." instance=ExtResource( 3 )]
 
 [node name="Fly" parent="." instance=ExtResource( 1 )]
+position = Vector2( 65, -33 )
