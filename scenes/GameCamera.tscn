@@ -7,4 +7,3 @@
 ]]
 current = true
 script = ExtResource( 1 )
-background_color = Color( 0.87451, 0.964706, 0.960784, 1 )
