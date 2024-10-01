@@ -1,5 +1,8 @@
 extends KinematicBody2D
 
+signal died
+
+var footstep_particles = preload("res://scenes/FootstepParticles.tscn")
 
 enum State { NORMAL, DASHING, INPUT_DISABLED }
 
@@ -16,6 +19,12 @@ var has_dash = false
 var current_state = State.NORMAL
 var is_state_new = true
 var is_dying = false
+var default_hazard_mask = 0
+
+func _ready():
+	$HazardArea.connect("area_entered", self, "on_hazard_area_entered")
+	$AnimatedSprite.connect("frame_changed", self, "on_animated_sprite_frame_changed")
+	default_hazard_mask = $HazardArea.collision_mask
 
 func _process(delta):
 	match current_state:
@@ -96,4 +105,15 @@ func update_animation():
 	if move_vec.x != 0:
 		$AnimatedSprite.flip_h = true if move_vec.x > 0 else false
 
+func spawn_footsteps(scale = 1):
+	var footstep = footstep_particles.instance()
+	get_parent().add_child(footstep)
+	footstep.scale = Vector2.ONE * scale
+	footstep.global_position = global_position
 
+func on_hazard_area_entered(area2d):
+	call_deferred("kill")
+	
+func on_animated_sprite_frame_changed():
+	if $AnimatedSprite.animation == "run" && $AnimatedSprite.frame == 0:
+		spawn_footsteps()
