@@ -6,6 +6,8 @@ var footstep_particles = preload("res://scenes/FootstepParticles.tscn")
 
 enum State { NORMAL, DASHING, INPUT_DISABLED }
 
+export(int, LAYERS_2D_PHYSICS) var dash_hazard_mask
+
 var gravity = 1000
 var velocity = Vector2.ZERO
 var max_horizontal_speed = 140
@@ -41,6 +43,10 @@ func change_state(newState):
 	is_state_new = true
 
 func process_normal(delta):
+	if is_state_new:
+		$DashParticles.emitting = false
+		$DashArea/CollisionShape2D.disabled = true
+		$HazardArea.collision_mask = default_hazard_mask
 	var move_vector = get_movement_vector()
 	velocity.x += move_vector.x * horizontal_acceleration * delta
 	if move_vector.x == 0:
@@ -59,6 +65,8 @@ func process_normal(delta):
 	velocity = move_and_slide(velocity, Vector2.UP)
 	if was_on_floor && !is_on_floor():
 		$CoyoteTimer.start()
+	if !was_on_floor && is_on_floor() && !is_state_new:
+		spawn_footsteps(1.5)
 	if is_on_floor():
 		has_double_jump = true
 		has_dash = true
@@ -69,6 +77,11 @@ func process_normal(delta):
 
 func process_dash(delta):
 	if is_state_new:
+		$AnimatedSprite.play("jump")
+		$DashParticles.emitting = true
+		$DashArea/CollisionShape2D.disabled = false
+		$AnimatedSprite.play("jump")
+		$HazardArea.collision_mask = dash_hazard_mask
 		var move_vector = get_movement_vector()
 		var velocity_mod = 1
 		if move_vector.x != 0:
@@ -104,6 +117,12 @@ func update_animation():
 		$AnimatedSprite.play("idle")
 	if move_vec.x != 0:
 		$AnimatedSprite.flip_h = true if move_vec.x > 0 else false
+
+func kill():
+	if is_dying:
+		return
+	is_dying = true
+
 
 func spawn_footsteps(scale = 1):
 	var footstep = footstep_particles.instance()
