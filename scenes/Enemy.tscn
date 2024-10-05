@@ -151,7 +151,6 @@ shape = SubResource( 3 )
 shape = SubResource( 4 )
 
 [node name="Visuals" type="Node2D" parent="."]
-scale = Vector2( 1e-05, 1e-05 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Visuals"]
 frames = SubResource( 5 )

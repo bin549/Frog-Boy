@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 signal died
 
+var player_death_scene = preload("res://scenes/PlayerDeath.tscn")
 var footstep_particles = preload("res://scenes/FootstepParticles.tscn")
 
 enum State { NORMAL, DASHING, INPUT_DISABLED }
@@ -122,6 +123,11 @@ func kill():
 	if is_dying:
 		return
 	is_dying = true
+	var player_death_instance = player_death_scene.instance()
+	player_death_instance.velocity = velocity
+	get_parent().add_child_below_node(self, player_death_instance)
+	player_death_instance.global_position = global_position
+	emit_signal("died")
 
 
 func spawn_footsteps(scale = 1):

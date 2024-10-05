@@ -11,13 +11,21 @@ config_version=4
 [application]
 
 config/name="frog-boy"
-run/main_scene="res://scenes/BaseLevel.tscn"
+run/main_scene="res://scenes/UI/MainMenu.tscn"
 boot_splash/image="res://icon.png"
 boot_splash/fullsize=false
 boot_splash/use_filter=false
 boot_splash/bg_color=Color( 0.87451, 0.964706, 0.960784, 1 )
 config/icon="res://icon.png"
 config/windows_native_icon="res://icon.ico"
+
+[autoload]
+
+LevelManager="*res://scenes/LevelManager.tscn"
+Helpers="*res://scripts/helpers.gd"
+ScreenTransitionManager="*res://scenes/ScreenTransitionManager.tscn"
+MouseCursor="*res://scenes/UI/MouseCursor.tscn"
+MusicPlayer="*res://scenes/MusicPlayer.tscn"
 
 [display]
 
