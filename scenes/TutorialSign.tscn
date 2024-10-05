@@ -42,11 +42,11 @@ __meta__ = {
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
 margin_right = 100.0
-margin_bottom = 28.0
+margin_bottom = 17.0
 
 [node name="Label" type="Label" parent="PanelContainer/MarginContainer"]
 margin_left = 4.0
-margin_top = 9.0
+margin_top = 4.0
 margin_right = 96.0
-margin_bottom = 18.0
+margin_bottom = 13.0
 autowrap = true

@@ -32,25 +32,23 @@ anims/default = SubResource( 1 )
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = 40.0
-margin_bottom = 40.0
 theme = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
-margin_left = 196.0
-margin_top = 109.0
-margin_right = 324.0
-margin_bottom = 200.0
+margin_left = 176.0
+margin_top = 85.0
+margin_right = 304.0
+margin_bottom = 185.0
 rect_pivot_offset = Vector2( 64, 50 )
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer"]
 margin_right = 128.0
-margin_bottom = 91.0
+margin_bottom = 100.0
 custom_constants/margin_right = 8
 custom_constants/margin_top = 8
 custom_constants/margin_left = 8
@@ -60,23 +58,25 @@ custom_constants/margin_bottom = 8
 margin_left = 8.0
 margin_top = 8.0
 margin_right = 120.0
-margin_bottom = 83.0
+margin_bottom = 92.0
 rect_min_size = Vector2( 112, 0 )
 custom_constants/separation = 6
 
 [node name="PlayButton" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer" instance=ExtResource( 3 )]
-margin_right = 112.0
-margin_bottom = 21.0
+margin_left = 8.0
+margin_right = 104.0
 text = "PLAY"
 
 [node name="OptionsButton" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer" instance=ExtResource( 3 )]
-margin_top = 27.0
-margin_right = 112.0
-margin_bottom = 48.0
+margin_left = 8.0
+margin_top = 30.0
+margin_right = 104.0
+margin_bottom = 54.0
 text = "OPTIONS"
 
 [node name="QuitButton" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer" instance=ExtResource( 3 )]
-margin_top = 54.0
-margin_right = 112.0
-margin_bottom = 75.0
+margin_left = 8.0
+margin_top = 60.0
+margin_right = 104.0
+margin_bottom = 84.0
 text = "QUIT "

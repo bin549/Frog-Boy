@@ -129,7 +129,6 @@ func kill():
 	player_death_instance.global_position = global_position
 	emit_signal("died")
 
-
 func spawn_footsteps(scale = 1):
 	var footstep = footstep_particles.instance()
 	get_parent().add_child(footstep)
