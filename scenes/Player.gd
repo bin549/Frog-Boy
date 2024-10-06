@@ -135,9 +135,13 @@ func spawn_footsteps(scale = 1):
 	footstep.scale = Vector2.ONE * scale
 	footstep.global_position = global_position
 
+func disable_player_input():
+	change_state(State.INPUT_DISABLED)
+
 func on_hazard_area_entered(area2d):
+	$"/root/Helpers".apply_camera_shake(1)
 	call_deferred("kill")
-	
+
 func on_animated_sprite_frame_changed():
 	if $AnimatedSprite.animation == "run" && $AnimatedSprite.frame == 0:
 		spawn_footsteps()

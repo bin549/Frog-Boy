@@ -1,46 +1,93 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scenes/UI/LevelComplete.gd" type="Script" id=1]
+[ext_resource path="res://resources/theme.tres" type="Theme" id=2]
+[ext_resource path="res://scenes/UI/AnimatedButton.tscn" type="PackedScene" id=3]
+
+[sub_resource type="Animation" id=1]
+resource_name = "default"
 
 [node name="LevelComplete" type="CanvasLayer"]
 script = ExtResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "default"
+anims/default = SubResource( 1 )
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
 margin_right = 40.0
 margin_bottom = 40.0
+theme = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
-margin_right = 40.0
-margin_bottom = 46.0
+margin_left = 196.0
+margin_top = 102.0
+margin_right = 324.0
+margin_bottom = 208.0
+rect_pivot_offset = Vector2( 66, 55 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer"]
-margin_left = 7.0
-margin_top = 7.0
-margin_right = 33.0
-margin_bottom = 39.0
+margin_right = 128.0
+margin_bottom = 106.0
+custom_constants/margin_right = 8
+custom_constants/margin_top = 8
+custom_constants/margin_left = 8
+custom_constants/margin_bottom = 8
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer"]
-margin_right = 26.0
-margin_bottom = 32.0
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 120.0
+margin_bottom = 98.0
+rect_min_size = Vector2( 112, 0 )
+size_flags_horizontal = 2
+size_flags_vertical = 2
 
 [node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
-margin_right = 26.0
-margin_bottom = 14.0
+margin_right = 112.0
+margin_bottom = 9.0
+text = "Level Complete!"
+align = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
-margin_top = 18.0
-margin_right = 26.0
-margin_bottom = 32.0
+margin_top = 13.0
+margin_right = 112.0
+margin_bottom = 22.0
 
-[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
-margin_bottom = 14.0
+[node name="CoinsCollectedLabel" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+margin_right = 74.0
+margin_bottom = 9.0
+text = "Coins collected: "
 
-[node name="Label2" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
-margin_left = 4.0
-margin_right = 4.0
-margin_bottom = 14.0
+[node name="CoinCounter" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+margin_left = 78.0
+margin_right = 78.0
+margin_bottom = 9.0
+size_flags_horizontal = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+margin_top = 26.0
+margin_right = 112.0
+margin_bottom = 34.0
+rect_min_size = Vector2( 0, 8 )
+
+[node name="RestartButton" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer" instance=ExtResource( 3 )]
+margin_left = 8.0
+margin_top = 38.0
+margin_right = 104.0
+margin_bottom = 62.0
+text = "RESTART"
+
+[node name="NextLevelButton" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer" instance=ExtResource( 3 )]
+margin_left = 8.0
+margin_top = 66.0
+margin_right = 104.0
+margin_bottom = 90.0
+text = "NEXT LEVEL"

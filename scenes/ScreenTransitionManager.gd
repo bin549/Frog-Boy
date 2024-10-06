@@ -8,7 +8,7 @@ func transition_to_scene(scene_path):
 	yield(get_tree().create_timer(.1), "timeout")
 	var screen_transition = screen_transition_scene.instance()
 	add_child(screen_transition)
-	# yield(screen_transition, "screen_covered")
+	yield(screen_transition, "screen_covered")
 	get_tree().change_scene(scene_path)
 
 func transition_to_menu():
