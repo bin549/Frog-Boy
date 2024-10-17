@@ -3,6 +3,7 @@ extends KinematicBody2D
 var enemy_death_scene = preload("res://scenes/EnemyDeath.tscn")
 
 export var is_spawning = true
+
 var max_speed = 25
 var velocity = Vector2.ZERO
 var direction = Vector2.ZERO
