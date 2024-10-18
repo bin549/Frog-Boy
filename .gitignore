@@ -11,3 +11,5 @@ data_*/
 mono_crash.*.json
 
 *.dmg
+
+exports/*

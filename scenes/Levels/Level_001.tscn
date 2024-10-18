@@ -42,13 +42,13 @@ position = Vector2( 117, 18 )
 
 [node name="TutorialSign" parent="." index="10" instance=ExtResource( 11 )]
 position = Vector2( 63, 18 )
-text = "Use WASD or arrow keys to move.
-Press SPACE to jump."
+text = "Use Arrow  keys to move.
+Press C to jump."
 
 [node name="TutorialSign2" parent="." index="11" instance=ExtResource( 11 )]
 position = Vector2( -180, -18 )
-text = "Hold SPACE to jump higher."
+text = "Hold C higher."
 
 [node name="TutorialSign3" parent="." index="12" instance=ExtResource( 11 )]
 position = Vector2( -531, -90 )
-text = "Press SPACE again while in-air to double jump."
+text = "Press C again while in-air to double jump."

@@ -68,4 +68,3 @@ position = Vector2( 317.463, 93.0987 )
 
 [node name="EnemySpawner" parent="." instance=ExtResource( 12 )]
 position = Vector2( 22.6729, 87.4526 )
-enemy_scene = ExtResource( 8 )

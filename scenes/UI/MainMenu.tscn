@@ -65,18 +65,18 @@ custom_constants/separation = 6
 [node name="PlayButton" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer" instance=ExtResource( 3 )]
 margin_left = 8.0
 margin_right = 104.0
-text = "PLAY"
+text = "New Game"
 
 [node name="OptionsButton" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer" instance=ExtResource( 3 )]
 margin_left = 8.0
 margin_top = 30.0
 margin_right = 104.0
 margin_bottom = 54.0
-text = "OPTIONS"
+text = "Settings"
 
 [node name="QuitButton" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer" instance=ExtResource( 3 )]
 margin_left = 8.0
 margin_top = 60.0
 margin_right = 104.0
 margin_bottom = 84.0
-text = "QUIT "
+text = "Quit"

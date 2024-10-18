@@ -136,4 +136,4 @@ position = Vector2( -27, 0 )
 
 [node name="TutorialSign" parent="." index="10" instance=ExtResource( 11 )]
 position = Vector2( 99, -54 )
-text = "Press SHIFT to dash while on-ground or in-air."
+text = "Press X  to dash while on-ground or in-air."
