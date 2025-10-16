@@ -3,3 +3,4 @@
 /android/
 *.dmg
 .idea/*
+exports/*
