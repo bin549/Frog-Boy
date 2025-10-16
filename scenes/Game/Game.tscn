@@ -1,10 +1,10 @@
 [gd_scene load_steps=12 format=4 uid="uid://elst0xn32iil"]
 
-[ext_resource type="Shader" uid="uid://j6ssb4v17100" path="res://scrolling.gdshader" id="1_50swi"]
+[ext_resource type="Shader" uid="uid://j6ssb4v17100" path="res://shaders/scrolling.gdshader" id="1_50swi"]
 [ext_resource type="Texture2D" uid="uid://d3wpsjuh5t4q4" path="res://assets/background/Green.png" id="2_f8ls4"]
 [ext_resource type="PackedScene" uid="uid://bi6crnlu0p75p" path="res://scenes/Player/Player.tscn" id="3_lfncv"]
 [ext_resource type="Texture2D" uid="uid://dw27ks2iy6r18" path="res://assets/other/Terrain (16x16).png" id="4_i6kj0"]
-[ext_resource type="Shader" uid="uid://7e3y02tl3ut8" path="res://grayscale.gdshader" id="5_21r26"]
+[ext_resource type="Shader" uid="uid://7e3y02tl3ut8" path="res://shaders/grayscale.gdshader" id="5_21r26"]
 [ext_resource type="Texture2D" uid="uid://b4cgytxlrs4ak" path="res://assets/other/End.png" id="6_4i46p"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_fc0e3"]
