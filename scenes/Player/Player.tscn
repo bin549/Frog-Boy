@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://w4magm41gw53"]
 
 [ext_resource type="Script" uid="uid://buupeq8l8ds25" path="res://scenes/Player/Player.cs" id="1_ky53y"]
-[ext_resource type="Texture2D" uid="uid://bkadv21yh5rx1" path="res://scenes/Tree/Sprite-0005.png" id="2_bvqhm"]
+[ext_resource type="Texture2D" uid="uid://bkadv21yh5rx1" path="res://scenes/Player/Sprite-0005.png" id="2_bvqhm"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yxg74"]
 radius = 5.0990195
