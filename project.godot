@@ -10,14 +10,14 @@ config_version=5
 
 [application]
 
-config/name="Frog Man"
-run/main_scene="uid://elst0xn32iil"
+config/name="Frog Boy"
+run/main_scene="uid://cfqkr6o16ca6v"
 config/features=PackedStringArray("4.5", "C#", "GL Compatibility")
-config/icon="uid://cealdlq531836"
+config/icon="res://icon.svg"
 
 [dotnet]
 
-project/assembly_name="New Game Project"
+project/assembly_name="New Game Project2"
 
 [editor]
 

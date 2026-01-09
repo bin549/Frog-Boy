@@ -1,0 +1,45 @@
+[gd_scene load_steps=8 format=3 uid="uid://dooh1v151j6h1"]
+
+[ext_resource type="Script" uid="uid://cgqc8ye2m6t0n" path="res://scenes/Cat/Cat.cs" id="1_3hlan"]
+[ext_resource type="Texture2D" uid="uid://bays4sph7tipg" path="res://scenes/Tree/Sprite-0005-Sheet.png" id="2_rue4g"]
+[ext_resource type="Texture2D" uid="uid://dewi5okl4ubf1" path="res://scenes/Tree/Sprite-0006.png" id="3_7huyo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q8kdv"]
+atlas = ExtResource("2_rue4g")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_exyxu"]
+atlas = ExtResource("2_rue4g")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r0gd4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q8kdv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_exyxu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_krkin"]
+
+[node name="Cat" type="Area2D" node_paths=PackedStringArray("tipDialog")]
+script = ExtResource("1_3hlan")
+tipDialog = NodePath("Dialog")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_r0gd4")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_krkin")
+
+[node name="Dialog" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, -14)
+texture = ExtResource("3_7huyo")

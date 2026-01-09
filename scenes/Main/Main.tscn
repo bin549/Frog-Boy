@@ -1,0 +1,56 @@
+[gd_scene load_steps=8 format=4 uid="uid://cfqkr6o16ca6v"]
+
+[ext_resource type="Script" uid="uid://blwoysy0i8gte" path="res://scenes/Main/Main.cs" id="1_bvmdu"]
+[ext_resource type="Texture2D" uid="uid://77o636gefnjf" path="res://scenes/Tree/icon.png" id="2_pkilc"]
+[ext_resource type="Texture2D" uid="uid://daew5ojd7iu6n" path="res://scenes/Tree/Tile.png" id="3_d463r"]
+[ext_resource type="PackedScene" uid="uid://w4magm41gw53" path="res://scenes/Player/Player.tscn" id="4_pkilc"]
+[ext_resource type="PackedScene" uid="uid://dooh1v151j6h1" path="res://scenes/Cat/Cat.tscn" id="5_d463r"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r0gd4"]
+texture = ExtResource("3_d463r")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_krkin"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_r0gd4")
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_bvmdu")
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(289, 255)
+scale = Vector2(3, 3)
+texture = ExtResource("2_pkilc")
+
+[node name="Icon2" type="Sprite2D" parent="."]
+position = Vector2(392, 255)
+scale = Vector2(3, 3)
+texture = ExtResource("2_pkilc")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+position = Vector2(373, 79)
+tile_map_data = PackedByteArray("AADy/w4AAAABAAAAAADz/w4AAAABAAAAAAD0/w4AAAABAAAAAAD1/w4AAAABAAAAAAD2/w4AAAABAAAAAAD3/w4AAAABAAAAAAD4/w4AAAABAAAAAAD5/w4AAAABAAAAAAD6/w4AAAABAAAAAAD7/w4AAAABAAAAAAD8/w4AAAABAAAAAAD9/w4AAAABAAAAAAD+/w4AAAABAAAAAAD//w4AAAABAAAAAAAAAA4AAAABAAAAAAABAA4AAAABAAAAAAACAA4AAAABAAAAAAADAA4AAAABAAAAAAAEAA4AAAABAAAAAAAFAA4AAAABAAAAAAAGAA4AAAABAAAAAAAHAA4AAAABAAAAAAAIAA4AAAABAAAAAADy/w8AAAABAAEAAADz/w8AAAABAAEAAAD0/w8AAAABAAEAAAD1/w8AAAABAAEAAAD2/w8AAAABAAEAAAD3/w8AAAABAAEAAAD4/w8AAAABAAEAAAD5/w8AAAABAAEAAAD6/w8AAAABAAEAAAD7/w8AAAABAAEAAAD8/w8AAAABAAEAAAD9/w8AAAABAAEAAAD+/w8AAAABAAEAAAD//w8AAAABAAEAAAAAAA8AAAABAAEAAAABAA8AAAABAAEAAAACAA8AAAABAAEAAAADAA8AAAABAAEAAAAEAA8AAAABAAEAAAAFAA8AAAABAAEAAAAGAA8AAAABAAEAAAAHAA8AAAABAAEAAAAIAA8AAAABAAEAAADy/xAAAAABAAEAAADy/xEAAAABAAEAAADz/xAAAAABAAEAAADz/xEAAAABAAEAAAD0/xAAAAABAAEAAAD0/xEAAAABAAEAAAD1/xAAAAABAAEAAAD1/xEAAAABAAEAAAD2/xAAAAABAAEAAAD2/xEAAAABAAEAAAD3/xAAAAABAAEAAAD3/xEAAAABAAEAAAD4/xAAAAABAAEAAAD4/xEAAAABAAEAAAD5/xAAAAABAAEAAAD5/xEAAAABAAEAAAD6/xAAAAABAAEAAAD6/xEAAAABAAEAAAD7/xAAAAABAAEAAAD7/xEAAAABAAEAAAD8/xAAAAABAAEAAAD8/xEAAAABAAEAAAD9/xAAAAABAAEAAAD9/xEAAAABAAEAAAD+/xAAAAABAAEAAAD+/xEAAAABAAEAAAD//xAAAAABAAEAAAD//xEAAAABAAEAAAAAABAAAAABAAEAAAAAABEAAAABAAEAAAABABAAAAABAAEAAAABABEAAAABAAEAAAACABAAAAABAAEAAAACABEAAAABAAEAAAADABAAAAABAAEAAAADABEAAAABAAEAAAAEABAAAAABAAEAAAAEABEAAAABAAEAAAAFABAAAAABAAEAAAAFABEAAAABAAEAAAAGABAAAAABAAEAAAAGABEAAAABAAEAAAAHABAAAAABAAEAAAAHABEAAAABAAEAAAAIABAAAAABAAEAAAAIABEAAAABAAEAAADy/xIAAAAAAAIAAADz/xIAAAABAAIAAAD0/xIAAAABAAIAAAD1/xIAAAABAAIAAAD2/xIAAAABAAIAAAD3/xIAAAABAAIAAAD4/xIAAAABAAIAAAD5/xIAAAABAAIAAAD6/xIAAAABAAIAAAD7/xIAAAABAAIAAAD8/xIAAAABAAIAAAD9/xIAAAABAAIAAAD+/xIAAAABAAIAAAD//xIAAAABAAIAAAAAABIAAAABAAIAAAABABIAAAABAAIAAAACABIAAAABAAIAAAADABIAAAABAAIAAAAEABIAAAABAAIAAAAFABIAAAABAAIAAAAGABIAAAABAAIAAAAHABIAAAABAAIAAAAIABIAAAABAAIAAAA=")
+tile_set = SubResource("TileSet_krkin")
+
+[node name="Player" parent="." instance=ExtResource("4_pkilc")]
+position = Vector2(267, 258)
+
+[node name="Cat" parent="." instance=ExtResource("5_d463r")]
+position = Vector2(346, 298)
