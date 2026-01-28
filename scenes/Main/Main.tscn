@@ -5,6 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://daew5ojd7iu6n" path="res://scenes/Tree/Tile.png" id="3_d463r"]
 [ext_resource type="PackedScene" uid="uid://w4magm41gw53" path="res://scenes/Player/Player.tscn" id="4_pkilc"]
 [ext_resource type="PackedScene" uid="uid://dooh1v151j6h1" path="res://scenes/Cat/Cat.tscn" id="5_d463r"]
+[ext_resource type="Texture2D" uid="uid://dqb5cxy5ivbwq" path="res://3.png" id="6_q8kdv"]
+[ext_resource type="Texture2D" uid="uid://b6yuq01q6j4uj" path="res://cherry.png" id="7_exyxu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r0gd4"]
 texture = ExtResource("3_d463r")
@@ -54,3 +56,12 @@ position = Vector2(267, 258)
 
 [node name="Cat" parent="." unique_id=2147447934 instance=ExtResource("5_d463r")]
 position = Vector2(346, 298)
+
+[node name="Girl" type="Sprite2D" parent="." unique_id=929197276]
+position = Vector2(379, 287)
+texture = ExtResource("6_q8kdv")
+
+[node name="Cherry" type="Sprite2D" parent="." unique_id=1974532569]
+position = Vector2(419, 293)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_exyxu")
