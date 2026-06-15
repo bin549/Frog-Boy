@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://w4magm41gw53"]
+
+[ext_resource type="Script" uid="uid://buupeq8l8ds25" path="res://Scenes/Player/Player.cs" id="1_ky53y"]
+[ext_resource type="Texture2D" uid="uid://bkadv21yh5rx1" path="res://Scenes/Player/Sprite-0005.png" id="2_bvqhm"]
+[ext_resource type="Script" uid="uid://cyqyls23uf2cl" path="res://Scenes/Player/CameraController.cs" id="3_cam"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yxg74"]
+radius = 5.0990195
+
+[node name="Player" type="CharacterBody2D" unique_id=316496253]
+script = ExtResource("1_ky53y")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1295161601]
+texture = ExtResource("2_bvqhm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1438819760]
+position = Vector2(0, 11)
+shape = SubResource("CircleShape2D_yxg74")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1675379151]
+script = ExtResource("3_cam")

@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://bs14o34uepkgp"]
+
+[ext_resource type="Texture2D" uid="uid://cl68hx7y1yux8" path="res://Scenes/Bat/bat.png" id="1_4btm0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ovin"]
+atlas = ExtResource("1_4btm0")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e1d6p"]
+atlas = ExtResource("1_4btm0")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0lekr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ovin")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e1d6p")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Bat" type="AnimatedSprite2D" unique_id=46742338]
+sprite_frames = SubResource("SpriteFrames_0lekr")
+autoplay = "default"
+frame_progress = 0.7791674
