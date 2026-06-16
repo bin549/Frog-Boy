@@ -22,4 +22,4 @@ public partial class Main : Node2D {
             ? DisplayServer.WindowMode.Windowed
             : DisplayServer.WindowMode.Fullscreen);
     }
-}
+}   
